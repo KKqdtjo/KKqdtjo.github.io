@@ -1,0 +1,55 @@
+---
+import { SKILL_CATEGORIES } from '../consts';
+---
+
+<div class="skill-stack">
+	{
+		SKILL_CATEGORIES.map((category) => (
+			<div class="skill-group">
+				<h3 class="skill-group-title">{category.label}</h3>
+				<ul class="skill-tag-list">
+					{category.items.map((item) => (
+						<li>
+							<span class="skill-tag">{item}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		))
+	}
+</div>
+
+<style>
+	.skill-stack {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	.skill-group {
+		margin: 0;
+	}
+	.skill-group-title {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.15em;
+		font-weight: 700;
+		color: rgb(var(--black));
+	}
+	.skill-tag-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 0.65rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.skill-tag {
+		display: inline-block;
+		padding: 0.25em 0.65em;
+		font-size: 0.9em;
+		line-height: 1.4;
+		color: rgb(var(--gray-dark));
+		background: rgb(var(--gray-light));
+		border-radius: 6px;
+		border: 1px solid rgba(var(--gray), 20%);
+	}
+</style>
