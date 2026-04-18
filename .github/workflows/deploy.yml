@@ -22,10 +22,8 @@ jobs:
       
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # with:
-          # path: . # 如果你的 Astro 项目不在根目录，请在这里指定路径
-          # node-version: 20 # 默认是 20，如果是其他版本可修改
-          # package-manager: npm # 如果你用的是 pnpm 或 yarn 请修改这里
+        with:
+          node-version: 22.12.0
 
   deploy:
     needs: build
