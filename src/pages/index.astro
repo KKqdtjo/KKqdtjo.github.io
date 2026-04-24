@@ -233,77 +233,82 @@ import {
 					Competitions &amp; Awards
 				</h2>
 				<ul class="divide-y divide-gray-100">
-					{[
+					{([
 						{
-							emoji: '🏆',
+							tier: 'gold',
 							title: 'MCM/ICM (Mathematical Contest in Modeling) — Meritorious Winner',
 							year: '2025',
 							detail: 'American collegiate mathematics modeling competition (Top ~7% worldwide)',
 						},
 						{
-							emoji: '🏆',
+							tier: 'gold',
 							title: 'National Undergraduate Mathematical Modeling Contest — 1st Prize (Beijing Region, Group A)',
 							year: '2025',
 							detail: 'Top prize in Beijing metropolitan division',
 						},
 						{
-							emoji: '🥈',
+							tier: 'silver',
 							title: 'CCF CSP (Software Proficiency Certification) — 300 pts, Top 3.4%',
 							year: '2024',
 							detail: '40th session; score ranks in the top 3.4% nationally',
 						},
 						{
-							emoji: '🏅',
+							tier: 'gold',
 							title: 'Beijing Municipal Innovation & Entrepreneurship Training Program — City-Level Funding',
 							year: '2025',
 							detail: 'Competitive research grant at city level',
 						},
 						{
-							emoji: '🎓',
+							tier: 'silver',
 							title: 'RUC Merit Scholarship (Academic Excellence) — 2nd Prize',
 							year: '2024',
 							detail: 'Renmin University of China',
 						},
 						{
-							emoji: '🎓',
+							tier: 'blue',
 							title: 'RUC Merit Scholarship (Academic Excellence) — 3rd Prize',
 							year: '2025',
 							detail: 'Renmin University of China',
 						},
 						{
-							emoji: '🌟',
+							tier: 'gold',
 							title: 'Outstanding Communist Youth League Member, RUC',
 							year: '2025',
 							detail: 'School-level honor',
 						},
 						{
-							emoji: '🌟',
+							tier: 'gold',
 							title: 'Three-Good Student (三好学生), RUC',
 							year: '2025',
 							detail: 'School-level honor',
 						},
 						{
-							emoji: '🥉',
+							tier: 'blue',
 							title: 'RUC CS Comprehensive Competition — Computer Networks Track, 3rd Prize',
 							year: '2025',
 							detail: 'Renmin University of China',
 						},
 						{
-							emoji: '🥇',
+							tier: 'gold',
 							title: 'Programming Contest I (Honor Course) — 1st Prize (Bronze)',
 							year: '2023',
 							detail: 'Team programming battle, RUC',
 						},
-					].map((award) => (
-						<li class="flex items-baseline gap-3 py-2.5">
-							<span class="flex-shrink-0 text-base leading-none" role="img" aria-hidden="true">{award.emoji}</span>
-							<div class="flex-1 min-w-0">
-								<span class="text-sm font-medium text-gray-800">{award.title}</span>
-								<span class="text-xs text-gray-400 ml-2">{award.detail}</span>
-							</div>
-							<span class="flex-shrink-0 text-xs font-semibold text-gray-400 ml-2">{award.year}</span>
-						</li>
-					))}
+					] as { tier: 'gold' | 'silver' | 'blue'; title: string; year: string; detail: string }[]).map((award) => {
+						const starColor = award.tier === 'gold' ? '#f59e0b' : award.tier === 'silver' ? '#9ca3af' : '#60a5fa';
+						return (
+							<li class="flex items-center gap-3 py-2.5">
+								<svg aria-hidden="true" class="flex-shrink-0 w-4 h-4" viewBox="0 0 20 20" fill={starColor} xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+								</svg>
+								<div class="flex-1 min-w-0">
+									<span class="text-sm font-medium text-gray-800">{award.title}</span>
+									<span class="text-xs text-gray-400 ml-2">{award.detail}</span>
+								</div>
+								<span class="flex-shrink-0 text-xs font-semibold text-gray-400 ml-2">{award.year}</span>
+							</li>
+						);
+					})}
 				</ul>
 			</section>
 		</main>
