@@ -14,6 +14,7 @@
   - Degree: B.S. in Computer Science
   - Timeline: Sept. 2023.09 - Present (Expected 2027.06)
   - GPA: 3.77
+  - Core Courses: Machine Learning, Natural Language Processing, Operating Systems...
 
 # 3. Featured Projects (第一级精选项目，2-4个)
 - Project 1: MyEasyMimic
