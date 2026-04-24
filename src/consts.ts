@@ -27,26 +27,46 @@ export const SKILL_CATEGORIES = [
 	},
 ] as const;
 
-/** 精选项目：数据在 consts 中维护；点击卡片或「源码」均跳转 GitHub（新标签页） */
+/** 精选项目：横向宽卡片，支持 image / techTags / links（code/paper/demo/slides 均可选） */
 export const FEATURED_PROJECTS = [
 	{
-		name: 'DeepSeek模型分布式部署指南',
+		name: 'MyEasyMimic',
+		image: '/images/easymimic.png',
 		description:
-			'本指南详细介绍了如何在华为云弹性云服务器(ECS)上进行DeepSeek大语言模型的分布式部署。',
-		href: 'https://github.com/KKqdtjo/Distributed_Deployment',
-		techTags: ['Python', 'Docker', 'Linux', 'Git'],
+			'Reproduced the EasyMimic algorithm using the latest LeRobot framework with a 7-DOF SO-100 robot arm. Collected custom demonstration data and performed local fine-tuning and inference on the GR00T foundation model.',
+		techTags: ['Python', 'LeRobot', 'GR00T', 'Robot Learning'],
+		links: {
+			code: 'https://github.com/KKqdtjo/MyEasyMimic',
+		},
 	},
 	{
-		name: '概念验证与孵化平台',
+		name: 'Robot Arm Teleoperation System',
+		image: '/images/teleop.png',
 		description:
-			'基于 B/S 架构的概念验证与孵化平台，用于管理科技项目的申报、评审、孵化全流程。',
-		href: 'https://github.com/KKqdtjo/Concept_Platform',
-		techTags: ['Java', 'JavaScript', 'Git', 'Linux'],
+			'A monocular-camera-based teleoperation system that captures human hand gestures and maps them in real time to a xArm7 robot arm and Allegro Hand dexterous gripper inside the SAPIEN simulation environment.',
+		techTags: ['Python', 'SAPIEN', 'Computer Vision', 'Robotics'],
+		links: {
+			code: 'https://github.com/GreyLee-Hacker/Robot_Arm_Teleop_System',
+		},
 	},
 	{
-		name: 'Image_Caption',
-		description: '从零搭建图像描述生成模型',
-		href: 'https://github.com/KKqdtjo/Image_Caption/tree/master',
-		techTags: ['Python', 'Git'],
+		name: 'RefereeBench',
+		image: '/images/pipeline.png',
+		description:
+			'A multi-modal benchmark for evaluating MLLMs on professional sports refereeing decisions. Combines video understanding with RAG over official rulebooks across 11 sports, using a hierarchical QA framework (Q1–Q5) from binary foul detection to rule-based penalty justification.',
+		techTags: ['Python', 'Multimodal LLM', 'RAG', 'Benchmark'],
+		links: {
+			code: 'https://github.com/KKqdtjo/SportReferee_Code',
+		},
+	},
+	{
+		name: 'Concept Verification & Incubation Platform',
+		image: '/images/platform.png',
+		description:
+			'A B/S-architecture platform for managing the full lifecycle of tech-project incubation — from application and peer review to incubation tracking. Built with a modern full-stack architecture for high performance, scalability, and security.',
+		techTags: ['Java', 'JavaScript', 'Spring Boot', 'Full-Stack'],
+		links: {
+			code: 'https://github.com/KKqdtjo/Concept_Platform',
+		},
 	},
 ] as const;
