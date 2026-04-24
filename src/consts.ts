@@ -3,11 +3,14 @@
 
 export const SITE_TITLE = 'Yuanhang Liu';
 export const SITE_DESCRIPTION =
-	'我是一名计算机系学生，来自中国人民大学，主要研究方向为多模态大模型和具身智能，欢迎学术交流与合作';
+	'My research mainly focuses on Multimodal Large Language Models and Embodied Intelligence. I am passionate about solving real-world problems through AI agents and distributed systems.';
 export const SITE_AUTHOR = 'Yuanhang Liu';
+export const SITE_AUTHOR_ZH = '刘远航';
 
-export const PROFILE_TAGLINE = 'CS Student @ Renmin University of China';
-export const PROFILE_IMAGE_URL = 'https://github.com/KKqdtjo.png';
+export const PROFILE_TAGLINE = 'Undergraduate CS Student @ Renmin University of China (RUC)';
+export const PROFILE_STATUS_TAG =
+	'Actively Seeking internships & collaborations in LLMs, Multimodal, and Embodied AI.';
+export const PROFILE_IMAGE_URL = '/avatar.jpg';
 
 export const GITHUB_URL = 'https://github.com/KKqdtjo';
 export const EMAIL = '2023202275@ruc.edu.cn';
