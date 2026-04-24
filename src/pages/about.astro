@@ -1,14 +1,10 @@
 ---
-import SkillTags from '../components/SkillTags.astro';
 import Layout from '../layouts/PageLayout.astro';
 import { EMAIL, GITHUB_URL, SITE_AUTHOR, SITE_DESCRIPTION } from '../consts';
 ---
 
 <Layout title={`关于 ${SITE_AUTHOR}`} description={SITE_DESCRIPTION}>
 	<p>{SITE_DESCRIPTION}</p>
-
-	<h2 id="about-skills">技术栈</h2>
-	<SkillTags />
 
 	<p>
 		我目前就读于中国人民大学计算机系。欢迎通过 <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
