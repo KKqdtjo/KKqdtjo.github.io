@@ -5,10 +5,10 @@ import { FEATURED_PROJECTS } from '../consts';
 <ul class="flex flex-col gap-6" role="list">
 	{
 		FEATURED_PROJECTS.map((project) => (
-			<li class="group flex flex-col sm:flex-row gap-5 bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+			<li class="group flex flex-col sm:flex-row bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
 
 				{/* ── Image (left) ── */}
-				<div class="sm:w-52 sm:flex-shrink-0 h-44 sm:h-auto bg-gray-100 overflow-hidden">
+				<div class="h-48 sm:h-auto sm:w-52 sm:min-h-[200px] sm:flex-shrink-0 sm:self-stretch bg-gray-100 overflow-hidden">
 					<img
 						src={project.image}
 						alt={project.name}
