@@ -136,16 +136,22 @@ import {
 							B.S. in Computer Science
 						</p>
 
-						<!-- GPA + Courses row -->
-						<div class="flex flex-wrap gap-x-6 gap-y-1.5 text-sm">
+						<!-- GPA -->
+						<div class="text-sm mb-2">
 							<span class="inline-flex items-center gap-1.5 text-gray-600">
 								<span class="font-medium text-gray-800">GPA</span>
 								3.77&thinsp;/&thinsp;4.0
 							</span>
-							<span class="inline-flex items-start gap-1.5 text-gray-600">
-								<span class="font-medium text-gray-800 flex-shrink-0">Core Courses</span>
-								<span>Machine Learning, Natural Language Processing, Operating Systems, ...</span>
-							</span>
+						</div>
+
+						<!-- Core Courses -->
+						<div>
+							<span class="text-sm font-medium text-gray-800">Core Courses</span>
+							<div class="flex flex-wrap gap-1.5 mt-1">
+								{['Machine Learning', 'Natural Language Processing', 'Operating Systems', 'Computer Networks', 'Data Structures & Algorithms', 'Computer Organization', 'Database Systems'].map((course) => (
+									<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">{course}</span>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
