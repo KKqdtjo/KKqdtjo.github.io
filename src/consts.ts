@@ -33,7 +33,7 @@ export const FEATURED_PROJECTS = [
 		name: 'MyEasyMimic',
 		image: '/images/easymimic.png',
 		description:
-			'Reproduced the EasyMimic algorithm using the latest LeRobot framework with a 7-DOF SO-100 robot arm. Collected custom demonstration data and performed local fine-tuning and inference on the GR00T foundation model.',
+			'Reproduced the EasyMimic algorithm using the LeRobot framework with a 7-DOF SO-100 robot arm. Collected custom demonstration data and performed local fine-tuning and inference on the GR00T foundation model.',
 		techTags: ['Python', 'LeRobot', 'GR00T', 'Robot Learning'],
 		links: {
 			code: 'https://github.com/KKqdtjo/MyEasyMimic',
@@ -43,7 +43,7 @@ export const FEATURED_PROJECTS = [
 		name: 'Robot Arm Teleoperation System',
 		image: '/images/teleop.png',
 		description:
-			'A monocular-camera-based teleoperation system that captures human hand gestures and maps them in real time to a xArm7 robot arm and Allegro Hand dexterous gripper inside the SAPIEN simulation environment.',
+			'A monocular-camera-based teleoperation system that maps human hand gestures in real time to a xArm7 robot arm and Allegro Hand dexterous gripper inside the SAPIEN simulation environment.',
 		techTags: ['Python', 'SAPIEN', 'Computer Vision', 'Robotics'],
 		links: {
 			code: 'https://github.com/GreyLee-Hacker/Robot_Arm_Teleop_System',
@@ -53,7 +53,7 @@ export const FEATURED_PROJECTS = [
 		name: 'RefereeBench',
 		image: '/images/pipeline.png',
 		description:
-			'A multi-modal benchmark for evaluating MLLMs on professional sports refereeing decisions. Combines video understanding with RAG over official rulebooks across 11 sports, using a hierarchical QA framework (Q1–Q5) from binary foul detection to rule-based penalty justification.',
+			'A novel multimodal benchmark designed to stress-test MLLMs on professional sports refereeing across 11 sports. It pairs video understanding with retrieval-augmented reasoning over official rulebooks, organized into a 5-tier hierarchical QA framework (Q1–Q5) — from binary foul detection to rule-grounded penalty justification — exposing where state-of-the-art MLLMs fall short on real-world rule-driven decision-making.',
 		techTags: ['Python', 'Multimodal LLM', 'RAG', 'Benchmark'],
 		links: {
 			code: 'https://github.com/KKqdtjo/SportReferee_Code',
@@ -63,7 +63,7 @@ export const FEATURED_PROJECTS = [
 		name: 'Concept Verification & Incubation Platform',
 		image: '/images/platform.png',
 		description:
-			'A B/S-architecture platform for managing the full lifecycle of tech-project incubation — from application and peer review to incubation tracking. Built with a modern full-stack architecture for high performance, scalability, and security.',
+			'A full-stack B/S platform that bridges the "last mile" from lab research to market — directly aligned with Beijing\'s policy on accelerating tech-achievement transformation. Streamlines the entire incubation lifecycle (application → peer review → tracking) on a modern full-stack architecture engineered for high performance, scalability, and enterprise-grade security.',
 		techTags: ['Java', 'JavaScript', 'Spring Boot', 'Full-Stack'],
 		links: {
 			code: 'https://github.com/KKqdtjo/Concept_Platform',
