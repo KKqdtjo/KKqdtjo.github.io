@@ -4,7 +4,6 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import ProjectCards from '../components/ProjectCards.astro';
 import {
-	EMAIL,
 	GITHUB_URL,
 	PROFILE_IMAGE_URL,
 	PROFILE_STATUS_TAG,
@@ -80,17 +79,6 @@ import {
 							GitHub
 						</a>
 
-						<!-- Email -->
-						<a
-							href={`mailto:${EMAIL}`}
-							class="inline-flex items-center gap-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 px-3.5 py-1.5 rounded-lg transition-colors no-underline"
-						>
-							<svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16" class="flex-shrink-0">
-								<path fill="currentColor" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A2 2 0 0 0 2 12h12a2 2 0 0 0 1.967-1.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
-							</svg>
-							Email
-						</a>
-
 						<!-- Resume (Primary) -->
 						<a
 							href="/CV.pdf"
@@ -110,7 +98,7 @@ import {
 
 			<!-- ── Education ──────────────────────────────────────── -->
 			<section class="mb-12" aria-labelledby="education-heading">
-				<h2 id="education-heading" class="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+				<h2 id="education-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
 					Education
 				</h2>
 
@@ -147,7 +135,7 @@ import {
 						<!-- Core Courses -->
 						<div>
 							<span class="text-sm font-medium text-gray-800">Core Courses</span>
-							<div class="flex flex-wrap gap-1.5 mt-1">
+							<div class="flex flex-wrap gap-2 mt-1">
 								{['Machine Learning', 'Natural Language Processing', 'Operating Systems', 'Computer Networks', 'Data Structures & Algorithms', 'Computer Organization', 'Database Systems'].map((course) => (
 									<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">{course}</span>
 								))}
@@ -159,13 +147,13 @@ import {
 
 			<!-- ── Projects ────────────────────────────────────────── -->
 			<section class="mb-12" aria-labelledby="projects-heading">
-				<h2 id="projects-heading" class="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">Featured Projects</h2>
+				<h2 id="projects-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">Featured Projects</h2>
 				<ProjectCards />
 			</section>
 
 			<!-- ── More Projects ────────────────────────────────────── -->
 			<section class="mb-12" aria-labelledby="more-projects-heading">
-				<h2 id="more-projects-heading" class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+				<h2 id="more-projects-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
 					More Projects
 				</h2>
 				<ul class="divide-y divide-gray-100">
@@ -235,11 +223,17 @@ import {
 
 			<!-- ── Competitions & Awards ─────────────────────────────── -->
 			<section class="mb-12" aria-labelledby="awards-heading">
-				<h2 id="awards-heading" class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+				<h2 id="awards-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
 					Competitions &amp; Awards
 				</h2>
 				<ul class="divide-y divide-gray-100">
 					{([
+						{
+							tier: 'silver',
+							title: 'CCF CSP (Software Proficiency Certification) — 300 pts, Top 3.4%',
+							year: '2025',
+							detail: '40th session; score ranks in the top 3.4% nationally',
+						},
 						{
 							tier: 'gold',
 							title: 'MCM/ICM (Mathematical Contest in Modeling) — Meritorious Winner',
@@ -281,12 +275,6 @@ import {
 							title: 'RUC CS Comprehensive Competition — Computer Networks Track, 3rd Prize',
 							year: '2025',
 							detail: 'Renmin University of China',
-						},
-						{
-							tier: 'silver',
-							title: 'CCF CSP (Software Proficiency Certification) — 300 pts, Top 3.4%',
-							year: '2024',
-							detail: '40th session; score ranks in the top 3.4% nationally',
 						},
 						{
 							tier: 'silver',

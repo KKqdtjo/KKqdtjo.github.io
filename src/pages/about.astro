@@ -1,21 +1,98 @@
 ---
-import Layout from '../layouts/PageLayout.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import { EMAIL, GITHUB_URL, SITE_AUTHOR, SITE_DESCRIPTION } from '../consts';
+
+const PAGE_TITLE = `About · ${SITE_AUTHOR}`;
 ---
 
-<Layout title={`关于 ${SITE_AUTHOR}`} description={SITE_DESCRIPTION}>
-	<p>{SITE_DESCRIPTION}</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={PAGE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<!-- ── Header ───────────────────────────────────────────── -->
+			<section class="mb-10" aria-label="About header">
+				<h1 class="text-3xl font-bold tracking-tight text-gray-900 mb-1">
+					Yuanhang Liu
+				</h1>
+				<p class="text-base text-gray-500">
+					Undergraduate CS Student @ Renmin University of China
+				</p>
+			</section>
 
-	<p>
-		我目前就读于中国人民大学计算机系。欢迎通过 <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
-		或
-		<a href={`mailto:${EMAIL}`}>邮箱</a>
-		与我联系。
-	</p>
+			<!-- ── About Me ─────────────────────────────────────────── -->
+			<section class="mb-12" aria-labelledby="about-me-heading">
+				<h2 id="about-me-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+					About Me
+				</h2>
+				<p class="text-base text-gray-700 leading-relaxed">
+					I am a third-year Computer Science student at Renmin University of China (RUC), Beijing.
+					My research focuses on Multimodal Large Language Models and Embodied Intelligence.
+					I am dedicated to exploring the capability boundaries of multimodal large models and their
+					applications in complex real-world physical tasks.
+				</p>
+			</section>
 
-	<p>
-		完整简历请见
-		<a href="/CV.pdf" target="_blank" rel="noopener noreferrer">PDF简历</a>
-		。
-	</p>
-</Layout>
+			<!-- ── Research Interests ───────────────────────────────── -->
+			<section class="mb-12" aria-labelledby="research-interests-heading">
+				<h2 id="research-interests-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+					Research Interests
+				</h2>
+				<ul class="space-y-2 text-sm text-gray-700">
+					{[
+						'Multimodal Large Language Models (MLLMs)',
+						'Embodied AI & Robot Learning',
+						'Retrieval-Augmented Generation (RAG)',
+						'AI Agents & Distributed Systems',
+					].map((item) => (
+						<li class="flex items-start gap-2.5">
+							<span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span>
+							<span>{item}</span>
+						</li>
+					))}
+				</ul>
+			</section>
+
+			<!-- ── Contact ──────────────────────────────────────────── -->
+			<section class="mb-12" aria-labelledby="contact-heading">
+				<h2 id="contact-heading" class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+					Contact
+				</h2>
+				<ul class="space-y-2 text-sm text-gray-700">
+					<li class="flex items-center gap-2.5">
+						<svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16" class="flex-shrink-0 text-gray-500">
+							<path fill="currentColor" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A2 2 0 0 0 2 12h12a2 2 0 0 0 1.967-1.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
+						</svg>
+						<span class="font-medium text-gray-800">Email:</span>
+						<a
+							href={`mailto:${EMAIL}`}
+							class="text-gray-700 hover:text-gray-900 transition-colors"
+						>
+							{EMAIL}
+						</a>
+					</li>
+					<li class="flex items-center gap-2.5">
+						<svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16" class="flex-shrink-0 text-gray-500">
+							<path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+						</svg>
+						<span class="font-medium text-gray-800">GitHub:</span>
+						<a
+							href={GITHUB_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-gray-700 hover:text-gray-900 transition-colors break-all"
+						>
+							{GITHUB_URL}
+						</a>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
