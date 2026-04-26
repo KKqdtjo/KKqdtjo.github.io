@@ -2,101 +2,104 @@
 import { FEATURED_PROJECTS } from '../consts';
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12" role="list">
+<ul class="flex flex-col gap-6" role="list">
 	{
 		FEATURED_PROJECTS.map((project) => (
-			<article
-				class="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
-				role="listitem"
-			>
-				{/* ── Image (top, fixed height) ── */}
-				<div class="h-48 overflow-hidden bg-gray-100 flex-shrink-0">
-					<img
-						src={project.image}
-						alt={project.name}
-						class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-					/>
-				</div>
+			<li class="list-none">
+				<article class="group flex flex-col sm:flex-row bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
 
-				{/* ── Content (below) ── */}
-				<div class="flex flex-col flex-1 p-5">
-					<h3 class="text-xl font-bold text-gray-900 mb-2">
-						{project.name}
-					</h3>
-
-					{/* Tech tags */}
-					<div class="flex flex-wrap gap-1.5 mb-3">
-						{project.techTags.map((tag) => (
-							<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">
-								{tag}
-							</span>
-						))}
+					{/* ── Image (left on desktop, top on mobile) ── */}
+					<div class="w-full sm:w-48 sm:flex-shrink-0 bg-gray-100 overflow-hidden aspect-[16/9] sm:aspect-[4/3]">
+						<img
+							src={project.image}
+							alt={project.name}
+							class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+							style="display: block;"
+						/>
 					</div>
 
-					{/* Description */}
-					<p class="text-sm text-gray-600 leading-relaxed line-clamp-3 flex-1">
-						{project.description}
-					</p>
+					{/* ── Content (right on desktop, below on mobile) ── */}
+					<div class="flex flex-col justify-between px-5 py-4 flex-1 min-w-0">
 
-					{/* Links */}
-					<div class="flex flex-wrap gap-x-4 gap-y-2 mt-4 pt-4 border-t border-gray-100 text-sm">
-						{'code' in project.links && project.links.code && (
-							<a
-								href={project.links.code}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1.5 font-medium text-gray-500 hover:text-gray-900 transition-colors no-underline"
-							>
-								<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
-									<path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-								</svg>
-								Code
-							</a>
-						)}
-						{'paper' in project.links && project.links.paper && (
-							<a
-								href={project.links.paper}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1.5 font-medium text-gray-500 hover:text-blue-600 transition-colors no-underline"
-							>
-								<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
-									<path fill="currentColor" d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
-									<path fill="currentColor" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-								</svg>
-								Paper
-							</a>
-						)}
-						{'demo' in project.links && project.links.demo && (
-							<a
-								href={project.links.demo}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1.5 font-medium text-gray-500 hover:text-blue-600 transition-colors no-underline"
-							>
-								<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
-									<path fill="currentColor" d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-									<path fill="currentColor" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-								</svg>
-								Demo
-							</a>
-						)}
-						{'slides' in project.links && project.links.slides && (
-							<a
-								href={project.links.slides}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1.5 font-medium text-gray-500 hover:text-blue-600 transition-colors no-underline"
-							>
-								<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
-									<path fill="currentColor" d="M14 2H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4l-1 1.5a.5.5 0 0 0 .4.8h5.2a.5.5 0 0 0 .4-.8L10 13h4a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 3h12v8H2V3z" />
-								</svg>
-								Slides
-							</a>
-						)}
+						{/* Title + tags + description */}
+						<div>
+							<h3 class="text-lg font-bold text-gray-900 mb-1.5 leading-snug">
+								{project.name}
+							</h3>
+
+							<div class="flex flex-wrap gap-1.5 mb-3">
+								{project.techTags.map((tag) => (
+									<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">
+										{tag}
+									</span>
+								))}
+							</div>
+
+							<p class="text-sm text-gray-600 leading-relaxed line-clamp-3">
+								{project.description}
+							</p>
+						</div>
+
+						{/* ── Link row ── */}
+						<div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 pt-3 border-t border-gray-100">
+							{'code' in project.links && project.links.code && (
+								<a
+									href={project.links.code}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors no-underline"
+								>
+									<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
+										<path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+									</svg>
+									Code
+								</a>
+							)}
+							{'paper' in project.links && project.links.paper && (
+								<a
+									href={project.links.paper}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-blue-600 transition-colors no-underline"
+								>
+									<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
+										<path fill="currentColor" d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+										<path fill="currentColor" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+									</svg>
+									Paper
+								</a>
+							)}
+							{'demo' in project.links && project.links.demo && (
+								<a
+									href={project.links.demo}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-blue-600 transition-colors no-underline"
+								>
+									<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
+										<path fill="currentColor" d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+										<path fill="currentColor" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+									</svg>
+									Demo
+								</a>
+							)}
+							{'slides' in project.links && project.links.slides && (
+								<a
+									href={project.links.slides}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-blue-600 transition-colors no-underline"
+								>
+									<svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" class="flex-shrink-0">
+										<path fill="currentColor" d="M14 2H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4l-1 1.5a.5.5 0 0 0 .4.8h5.2a.5.5 0 0 0 .4-.8L10 13h4a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 3h12v8H2V3z"/>
+									</svg>
+									Slides
+								</a>
+							)}
+						</div>
 					</div>
-				</div>
-			</article>
+				</article>
+			</li>
 		))
 	}
-</div>
+</ul>

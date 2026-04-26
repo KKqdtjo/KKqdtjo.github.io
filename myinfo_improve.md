@@ -37,7 +37,7 @@ The benchmark covers 11 sports and provides a hierarchical QA framework (Q1-Q5) 
 
 
 # 4. More Projects / Open Source (第二级其他项目)
-- [2025] Distributed_Deployment | 本项目是一个基于华为云弹性云服务器(ECS)的DeepSeek大语言模型的分布式部署指南。 | Links: https://github.com/KKqdtjo/Distributed_Deployment
+- [2025] DeepSeek 分布式部署 | 本项目是一个基于华为云弹性云服务器(ECS)的DeepSeek大语言模型的分布式部署指南。 | Links: https://github.com/Merlinus-Ambrosius/deepseek-distributed/tree/main
 - [2024] TouTiao Comment Crawler | 本项目是一个专门针对今日头条新闻评论的爬虫工具，解决了现代网站评论数据动态加载的技术难题。通过深度分析DOM结构，实现了准确的评论层级关系识别，为数据分析和研究提供了可靠的数据源。 | Links: https://github.com/KKqdtjo/Toutiao-Crawler-Practice
 - [2024] Image Captioning System | 图像描述任务要求计算机能够生成自然语言的文本来描述图像上的内容。通过图像描述生成模型，可以将图像转化为近似人类语言的描述，就更容易对图像进行相应的检索、分类、理解等工作，也可用于视觉辅助技术中帮助视觉障碍者进行感知。 | Links: https://github.com/KKqdtjo/Image_Caption/tree/master
 - [2024] 苏拉卡尔塔棋 | 苏拉卡尔塔棋是一种基于图像的棋类游戏，玩家通过在图像上移动棋子来达到游戏目标。在本项目中，我们用 Qt 开发一款Surakarta棋联机对战游戏。 | Links: https://github.com/KKqdtjo/Surakarta
