@@ -45,7 +45,7 @@ The benchmark covers 11 sports and provides a hierarchical QA framework (Q1-Q5) 
 
 
 # 5. Competitions & Awards
-- 第 40 次 CCF 计算机软件能力认证 (CSP) 300 分，排名前 3.4%
+- 2025 第 40 次 CCF 计算机软件能力认证 (CSP) 300 分，排名前 3.4%
 - 2025 年美国大学生数学建模竞赛 (MCM/ICM) M 奖
 - 2025 年全国大学生数学建模竞赛北京赛区甲组 一等奖
 - 2025 年北京市级大学生创新训练计划项目 市级立项

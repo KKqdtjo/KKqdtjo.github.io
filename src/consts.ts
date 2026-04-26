@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = 'Yuanhang Liu';
 export const SITE_DESCRIPTION =
-	'My research mainly focuses on Multimodal Large Language Models and Embodied Intelligence. I am passionate about solving real-world problems through AI agents and distributed systems.';
+	'My research mainly focuses on Multimodal Large Language Models and Embodied Intelligence. I am dedicated to exploring the capability boundaries of multimodal large models and the applications of embodied intelligence in complex real-world physical tasks.';
 export const SITE_AUTHOR = 'Yuanhang Liu';
 export const SITE_AUTHOR_ZH = '刘远航';
 

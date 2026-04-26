@@ -8,11 +8,12 @@ import { FEATURED_PROJECTS } from '../consts';
 			<li class="group flex flex-col sm:flex-row bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
 
 				{/* ── Image (left) ── */}
-				<div class="h-48 sm:h-auto sm:w-52 sm:min-h-[200px] sm:flex-shrink-0 sm:self-stretch bg-gray-100 overflow-hidden">
+				<div class="h-52 sm:h-auto sm:w-52 sm:flex-shrink-0 sm:self-stretch bg-gray-100 overflow-hidden">
 					<img
 						src={project.image}
 						alt={project.name}
-						class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+						class="w-full h-full object-cover object-center block transition-transform duration-300 group-hover:scale-105"
+						style="min-height: 180px"
 					/>
 				</div>
 
