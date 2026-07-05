@@ -27,7 +27,11 @@ export const SKILL_CATEGORIES = [
 	},
 ] as const;
 
-/** 精选项目：横向宽卡片，支持 image / techTags / links（code/paper/demo/slides 均可选） */
+/**
+ * 精选项目：卡片式展示。
+ * - image 可选：省略时卡片会用「学术蓝渐变 + 项目名首字母」自动占位。
+ * - links 里 code / paper / demo / slides 均为可选，写了才会显示对应按钮。
+ */
 export const FEATURED_PROJECTS = [
 	{
 		name: 'MyEasyMimic',
@@ -67,6 +71,16 @@ export const FEATURED_PROJECTS = [
 		techTags: ['Java', 'JavaScript', 'Spring Boot', 'Full-Stack'],
 		links: {
 			code: 'https://github.com/KKqdtjo/Concept_Platform',
+		},
+	},
+	{
+		name: 'PetPresence · 萌宠在线',
+		image: '/images/petpresence.jpg',
+		description:
+			'A hackathon-built, open-source creator pipeline that turns your own pet photos and videos into an AI-assisted transparent desktop companion. Local-first with no required paid APIs, featuring an agent-friendly CLI workflow and an action manifest system (idle, sleep, play, and more).',
+		techTags: ['TypeScript', 'Electron', 'AI Agent', 'ffmpeg'],
+		links: {
+			code: 'https://github.com/xytsakura/PetPresence-public',
 		},
 	},
 ] as const;

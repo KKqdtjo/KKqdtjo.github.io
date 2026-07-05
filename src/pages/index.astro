@@ -22,18 +22,17 @@ import {
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-14">
 			<!-- ── Hero ────────────────────────────────────────────── -->
-			<section class="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start mb-12" aria-label="About">
-				<!-- Photo -->
+			<section class="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start mb-14" aria-label="About">
+				<!-- Photo — width fixed, height auto so the full portrait shows uncropped -->
 				<div class="flex-shrink-0 mx-auto sm:mx-0">
 					<img
 						src={PROFILE_IMAGE_URL}
 						alt={`${SITE_AUTHOR} profile photo`}
 						width="160"
-						height="160"
 						loading="eager"
-						class="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl object-cover shadow-md ring-1 ring-gray-200"
+						class="w-36 sm:w-40 h-auto rounded-2xl object-contain shadow-md ring-1 ring-gray-200"
 					/>
 				</div>
 
@@ -79,7 +78,7 @@ import {
 							href="/CV.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-gray-900 hover:bg-gray-700 px-4 py-1.5 rounded-lg transition-colors no-underline active:translate-y-px"
+							class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 bg-white hover:bg-gray-100 border border-gray-300 px-4 py-1.5 rounded-lg transition-colors no-underline active:translate-y-px"
 						>
 							<svg viewBox="0 0 16 16" aria-hidden="true" width="15" height="15" class="flex-shrink-0">
 								<path fill="currentColor" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
@@ -92,7 +91,7 @@ import {
 			</section>
 
 			<!-- ── Education ──────────────────────────────────────── -->
-			<section class="mb-12" aria-labelledby="education-heading">
+			<section class="mb-14" aria-labelledby="education-heading">
 				<h2 id="education-heading" class="text-xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">
 					Education
 				</h2>
@@ -141,15 +140,15 @@ import {
 			</section>
 
 			<!-- ── Projects ────────────────────────────────────────── -->
-			<section class="mb-12" aria-labelledby="projects-heading">
+			<section class="mb-14" aria-labelledby="projects-heading">
 				<h2 id="projects-heading" class="text-xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">Featured Projects</h2>
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 					<ProjectCards />
 				</div>
 			</section>
 
 			<!-- ── More Projects ────────────────────────────────────── -->
-			<section class="mb-12" aria-labelledby="more-projects-heading">
+			<section class="mb-14" aria-labelledby="more-projects-heading">
 				<h2 id="more-projects-heading" class="text-xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">
 					More Projects
 				</h2>
@@ -186,19 +185,18 @@ import {
 							links: [{ label: 'Code', href: 'https://github.com/KKqdtjo/Nine_Bags_Problem' }],
 						},
 					].map((item) => (
-						<li class="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-0.5 py-3">
+						<li class="flex flex-col sm:flex-row sm:items-baseline gap-x-4 gap-y-1 py-3.5">
 							{/* Year */}
-							<span class="flex-shrink-0 text-xs font-semibold text-gray-400 w-10">{item.year}</span>
+							<span class="flex-shrink-0 text-xs font-semibold text-gray-400 w-10 pt-0.5">{item.year}</span>
 
-							{/* Name · desc — single truncated line on sm+ */}
-							<p class="flex-1 min-w-0 text-sm truncate">
-								<span class="font-semibold text-gray-800">{item.name}</span>
-								<span class="text-gray-300 mx-1.5" aria-hidden="true">·</span>
-								<span class="text-gray-500">{item.desc}</span>
-							</p>
+							{/* Name + full description (wraps, no truncation) */}
+							<div class="flex-1 min-w-0">
+								<span class="text-sm font-semibold text-gray-800">{item.name}</span>
+								<p class="text-sm text-gray-500 mt-0.5">{item.desc}</p>
+							</div>
 
 							{/* Links */}
-							<div class="flex gap-3 flex-shrink-0">
+							<div class="flex gap-3 flex-shrink-0 pt-0.5">
 								{item.links.map((link) => (
 									<a
 										href={link.href}
@@ -219,23 +217,35 @@ import {
 			</section>
 
 			<!-- ── Competitions & Awards ─────────────────────────────── -->
-			<section class="mb-12" aria-labelledby="awards-heading">
+			<section class="mb-4" aria-labelledby="awards-heading">
 				<h2 id="awards-heading" class="text-xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">
 					Competitions &amp; Awards
 				</h2>
 				<ul class="divide-y divide-gray-100">
 					{([
 						{
+							tier: 'gold',
+							title: 'Lanqiao Cup — C/C++ College Group A (Beijing Region), 1st Prize (Qualified for National Finals)',
+							year: '2026',
+							detail: '17th Lanqiao Cup; Beijing metropolitan division · advancing to national finals',
+						},
+						{
+							tier: 'gold',
+							title: 'The 4th “AI Future” Innovation Hackathon — Grand Finals 3rd Place (Team) & Individual Excellence Award',
+							year: '2026',
+							detail: 'Innovation hackathon · team finals podium + individual honor',
+						},
+						{
+							tier: 'silver',
+							title: '“JD Cup” 17th Student Innovation & Entrepreneurship Competition — Finals 2nd Prize',
+							year: '2026',
+							detail: 'National student innovation & entrepreneurship contest · finals second prize',
+						},
+						{
 							tier: 'silver',
 							title: 'CCF CSP (Software Proficiency Certification) — 300 pts, Top 3.4%',
 							year: '2025',
 							detail: '40th session; score ranks in the top 3.4% nationally',
-						},
-						{
-							tier: 'gold',
-							title: 'Lanqiao Cup — C/C++ College Group A (Beijing Region), 1st Prize (Qualified for National Finals)',
-							year: '2025',
-							detail: '17th Lanqiao Cup; Beijing metropolitan division · advancing to national finals',
 						},
 						{
 							tier: 'gold',
@@ -294,13 +304,13 @@ import {
 					] as { tier: 'gold' | 'silver' | 'blue'; title: string; year: string; detail: string }[]).map((award) => {
 						const starColor = award.tier === 'gold' ? '#f59e0b' : award.tier === 'silver' ? '#9ca3af' : '#60a5fa';
 						return (
-							<li class="flex items-center gap-3 py-2.5">
-								<svg aria-hidden="true" class="flex-shrink-0 w-4 h-4" viewBox="0 0 20 20" fill={starColor} xmlns="http://www.w3.org/2000/svg">
+							<li class="flex items-start gap-3 py-2.5">
+								<svg aria-hidden="true" class="flex-shrink-0 w-4 h-4 mt-0.5" viewBox="0 0 20 20" fill={starColor} xmlns="http://www.w3.org/2000/svg">
 									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
 								</svg>
 								<div class="flex-1 min-w-0">
 									<span class="text-sm font-medium text-gray-800">{award.title}</span>
-									<span class="text-xs text-gray-400 ml-2">{award.detail}</span>
+									<span class="block sm:inline text-xs text-gray-400 sm:ml-2">{award.detail}</span>
 								</div>
 								<span class="flex-shrink-0 text-xs font-semibold text-gray-400 ml-2">{award.year}</span>
 							</li>
